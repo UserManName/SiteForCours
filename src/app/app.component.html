@@ -1,0 +1,98 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="basis">
+  <div class="theForm">
+    <h1>Форма</h1>
+    <form action="" method="post" (ngSubmit)="create();">
+      <div class="field">
+        <label for="Surname">Фамилия:</label>
+        <input type="text" name = "surname"  [(ngModel)]="newTodoSurname" required >
+      </div>
+      <div class="field">
+        <label for="Name">Имя:</label>
+        <input type="text" name = "name" [(ngModel)]="newTodoName" required  >
+        </div> 
+          <div class="field">
+        <label for="Patronumic">Отчество:</label>
+        <input type="text" name = "patronumic" [(ngModel)]="newTodoPatronumic" required  >
+        </div>
+          <div class="field">
+        <label for="Level">Должность:</label>
+        <input type="text" name = "level" [(ngModel)]="newTodoLevel" required  >
+        </div>
+          <div class="field">
+        <label for="Born">Дата рождения:</label>
+        <input type="date" name = "born"  [(ngModel)]="newTodoBorn" required >
+        </div>
+          <div class="field">
+        <label for="Adress">Адрес проживания:</label>
+        <input type="text" name = "adress" [(ngModel)]="newTodoAdress" required  >
+        </div>
+          <div class="field">
+        <label for="Phone">Контактный телефон:</label>
+        <input type="text" name = "phone" [(ngModel)]="newTodoPhone" required  >
+        </div>
+        <div class="field">
+          <label for="Email">Электронный адрес:</label>
+          <input type="email" name = "email" [(ngModel)]="newTodoEmail" required  >
+        </div>
+        <div class="field">
+          <label for="Money">Сумма оклада:</label>
+          <input type="text" name = "money" [(ngModel)]="newTodoMoney" required  >
+        </div>
+        <div class="field" id="Buttonn" *ngIf="!showEditSubmit;">
+          <input type="submit" class="submit" value="Добавить сотрудника"  />
+          <input type="reset" class="submit" value="Очистить"  />
+        </div>
+        <div class="field" id="Buttonn" *ngIf="showEditSubmit;">
+            <input type="submit" class="submit" value="Сохранить"  />
+            <input type="submit" (click)="clearForm()" class="submit" value="Отмена"  />
+          </div>
+  </form>
+  </div>
+
+  <div class="theTable">
+    <h1>Таблица</h1>
+    <table id="Table1" class="sortable">
+      <thead>
+      <tr>
+        <td>ФИО</td>
+        <td>Должность</td>
+        <td>Дата рождения</td>
+        <td>Адрес проживания</td>
+        <td>Контактный телефон</td>
+        <td>Электронный адрес</td>
+        <td>Сумма оклада</td>
+        <td>Действие</td>
+      </tr>
+    </thead>
+    <tbody *ngFor="let todo of todos">
+        <tr>
+            <td>{{ todo.name + " " + todo.surname + " " + todo.patronumic }}</td>
+            <td>{{ todo.level }}</td>
+            <td>{{ todo.born }}</td>
+            <td>{{ todo.adress }}</td>
+            <td>{{ todo.phone }}</td>
+            <td>{{ todo.email }}</td>
+            <td>{{ todo.money }}</td>
+            <td>
+                <input type="submit" class="submit" value="Редактироватьт" (click)="redact(todo)"/>
+                <input type="submit" class="submit" value="Удалить" (click)="showModalWin(todo)"/>
+            </td>
+          </tr>
+    </tbody>
+    </table>
+  </div>
+</div>
+
+<div *ngIf="showModalWindov;">
+  <div id="a">
+    <div id="windows">
+      <div style="margin: 10px 0px 10px 0px; text-align: center;">Вы действительно хотите удалить запись?</div>
+      <div>
+        <input type="submit" name="subm" (click)="delete();" class="submit" value="Ок" style = "float: left; margin-left: 30px" />
+        <input type="submit" name="subm" (click)="closeModalWin();" class="submit" value="Отмена" style = "float: right; margin-right: 30px" />
+      </div>
+      </div>
+ </div>
+ <div id="b"></div>
+</div>

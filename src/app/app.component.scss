@@ -1,0 +1,122 @@
+$link: #123121;
+
+.basis {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: $link;
+    font-family: "Comic Sans MS";
+  }
+  
+  h1{
+    text-align: center;
+    cursor:default;
+    transition: 0.5s linear;
+    &:hover{
+      color: $link;
+      cursor:default;
+      transition: 0.5s linear;
+    }
+  }
+  
+  .theForm, .theTable{
+    color:#00170B;
+    background-color: #44916A;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .theForm{
+    width: 375px;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .field {
+    clear: both;
+    text-align: right;
+    line-height:25px;
+    transition: 0.5s linear;
+    margin-top: 10px;
+    label{
+      border-radius: 5px;
+      float: left;
+      padding-right:10px;
+    }
+    &:hover {
+      color: #611008;
+      font-size: 17px;
+      transition: 0.5s linear;
+    }
+  }
+  
+  input{
+    background-color: #64916A;
+    border-color: #64916A;
+  }
+  
+  .theTable{
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    margin-bottom: 50px;
+    button{
+      margin: 2px;
+    }
+  }
+  table, td, tr{
+    border: 2px;
+    border-style: solid;
+    border-collapse: collapse;
+    padding: 3px;
+    text-align: center;
+  }
+  table{
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .submit{
+    padding: 3px;
+    font-family: "Comic Sans MS";
+    border-radius: 5px;
+  }
+  
+  #a {
+    position:fixed;
+    background: #44916A;
+    z-index:3;
+    display:block;
+    border: 2px solid green;
+    border-radius: 10px;
+    margin-left: 45%;
+    top: 200px;
+  }
+  
+  #b {
+    position:fixed;
+    filter: alpha(opacity=80);
+    opacity: 0.7;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display:block;
+    background: rgb(35, 53, 38);
+    z-index:1;
+  }
+  
+  #windows {
+    font-family: "Comic Sans MS";
+    padding:5px;
+    width: 200px;
+    height: 100px;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  
