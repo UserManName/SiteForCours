@@ -149,5 +149,6 @@ export class AppComponent {
     this.newTodoPhone = undefined;
     this.newTodoEmail = undefined;
     this.newTodoMoney = undefined;
+
   }
 }
